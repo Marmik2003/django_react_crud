@@ -14,6 +14,7 @@ class ListStudentsView(generics.ListAPIView):
 class RetrieveUpdateDeleteStudents(generics.RetrieveUpdateDestroyAPIView):
     """Retrieve, Update and Delete Student"""
     serializer_class = StudentSerializer
+    queryset = Student.objects.all()
 
     def get_object(self):
         """Retrieve and return student"""
